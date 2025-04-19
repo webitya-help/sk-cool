@@ -15,20 +15,23 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import BuildIcon from '@mui/icons-material/Build';
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
+
 const iconMap = {
-  Home: <HomeIcon className="text-blue-600" />,
-  'AC Rental': <AcUnitIcon className="text-cyan-600" />,
-  'AC Repair': <BuildIcon className="text-blue-500" />,
-  'Washing Machine Repair': <LocalLaundryServiceIcon className="text-indigo-600" />,
-  'Fridge Repair': <KitchenIcon className="text-blue-700" />,
-  Contact: <ContactPhoneIcon className="text-green-600" />,
-};
+    Home: <HomeIcon className="text-blue-600" />,
+    About: <InfoIcon className="text-green-400" />,
+    'AC Rental': <AcUnitIcon className="text-cyan-600" />,
+    'AC Repair': <BuildIcon className="text-blue-500" />,
+    'Washing Machine Repair': <LocalLaundryServiceIcon className="text-indigo-600" />,
+    'Fridge Repair': <KitchenIcon className="text-blue-700" />,
+    Contact: <ContactPhoneIcon className="text-green-600" />,
+  };
 
 const DrawerEl = ({ open, onClose, links }) => {
   return (
@@ -37,7 +40,7 @@ const DrawerEl = ({ open, onClose, links }) => {
         {/* Header with title and close button */}
         <Box className="flex items-center justify-between px-4 py-3">
           <Typography variant="h6" className="font-bold text-blue-700">
-            SK COOL Service
+            SK COOL Services
           </Typography>
           <IconButton onClick={onClose}>
             <CloseIcon />

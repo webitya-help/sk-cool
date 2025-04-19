@@ -1,5 +1,7 @@
 'use client';
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   AppBar,
   Toolbar,
@@ -9,11 +11,12 @@ import {
   Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import AcUnitIcon from '@mui/icons-material/AcUnit'; // A/C icon for creativity
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 import DrawerEl from '../DrawerEl';
 
 const links = [
   { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
   { label: 'AC Rental', path: '/ac-rental' },
   { label: 'AC Repair', path: '/ac-repair' },
   { label: 'Washing Machine Repair', path: '/washing-machine-repair' },
@@ -36,7 +39,7 @@ const Navbar = () => {
             <AcUnitIcon className="text-white" fontSize="large" />
             <Box>
               <Typography variant="h6" className="text-white font-bold">
-                SK COOL Service
+                SK COOL Services
               </Typography>
               <Typography variant="caption" className="text-white text-xs">
                 Your Trusted Home Appliance Experts
@@ -47,17 +50,17 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <Box className="hidden md:flex gap-4">
             {links.map((link) => (
-              <Button
-                key={link.path}
-                href={link.path}
-                className="!text-white normal-case hover:bg-white hover:text-blue-600 transition duration-300 font-medium"
-              >
-                {link.label}
-              </Button>
+              <Link href={link.path} key={link.path} passHref>
+                <Button
+                  className="!text-white normal-case hover:bg-white hover:text-blue-600 transition duration-300 font-medium"
+                >
+                  {link.label}
+                </Button>
+              </Link>
             ))}
           </Box>
 
-          {/* Hamburger Icon (only small screens) */}
+          {/* Hamburger Icon (small screens only) */}
           <Box className="block md:hidden">
             <IconButton
               edge="end"
@@ -72,7 +75,7 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Drawer Component */}
+      {/* Drawer for mobile navigation */}
       <DrawerEl open={drawerOpen} onClose={() => setDrawerOpen(false)} links={links} />
     </>
   );
