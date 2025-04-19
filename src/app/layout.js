@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SK COOL Service",
+  title: "SK COOL Services",
   description: "AC rentals and repairs in your city",
 };
 

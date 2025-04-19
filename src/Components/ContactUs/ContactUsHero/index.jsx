@@ -11,7 +11,7 @@ export default function ContactUsHero() {
     <section
       className="relative w-full h-[70vh] md:h-[85vh] bg-cover bg-center flex items-center"
       style={{
-        backgroundImage: "url('/home/contact-bg.webp')", // Add this image
+        backgroundImage: "url('/home/contact.webp')", // Add this image
       }}
     >
   <div className="absolute inset-0 bg-black/60" />
